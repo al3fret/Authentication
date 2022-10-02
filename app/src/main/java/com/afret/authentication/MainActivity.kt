@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.afret.authentication.presentation.authentication.signin.SignInScreen
+import com.afret.authentication.presentation.authentication.signup.SignUpScreen
 import com.afret.authentication.theme.AuthenticationTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SignInScreen()
+                    SignUpScreen()
                 }
             }
         }

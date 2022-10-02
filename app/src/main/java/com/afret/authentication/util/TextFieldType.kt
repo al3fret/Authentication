@@ -1,4 +1,4 @@
-package com.afret.testauthentication.util
+package com.afret.authentication.util
 
 enum class TextFieldType {
     Email,Password,Text

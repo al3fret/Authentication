@@ -7,7 +7,7 @@ import androidx.compose.ui.unit.dp
 import com.afret.authentication.theme.ColorAmericanPurple
 import com.afret.authentication.theme.IbarraNovaNormalGray14
 import com.afret.authentication.theme.IbarraNovaSemiBoldPlatinum16
-import com.afret.testauthentication.util.TextFieldType
+import com.afret.authentication.util.TextFieldType
 
 
 @Composable
