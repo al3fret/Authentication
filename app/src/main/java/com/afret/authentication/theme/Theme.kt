@@ -1,4 +1,4 @@
-package com.afret.authentication.ui.theme
+package com.afret.authentication.theme
 
 import android.app.Activity
 import android.os.Build
