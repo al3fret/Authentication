@@ -1,11 +1,8 @@
 package com.afret.authentication.presentation.authentication.signup
 
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -14,6 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.afret.authentication.R
 import com.afret.authentication.theme.ColorGunmetal
 import com.afret.authentication.theme.IbarraNovaBoldPlatinum18
@@ -24,7 +22,7 @@ import com.afret.authentication.widget.textfield.AuthenticationTextField
 
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(navController: NavController) {
 
 
     var fullName by remember {
@@ -60,7 +58,11 @@ fun SignUpScreen() {
             modifier = Modifier
                 .align(Alignment.Start)
                 .width(40.dp)
-                .height(30.dp),
+                .height(30.dp)
+                .clickable {
+                           navController.popBackStack()
+                }
+            ,
             contentDescription = "back"
         )
 
@@ -139,7 +141,7 @@ fun SignUpScreen() {
 @Preview
 fun SignUpPreview() {
 
-    SignUpScreen()
+ //   SignUpScreen()
 }
 
 
