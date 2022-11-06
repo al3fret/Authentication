@@ -8,12 +8,13 @@ import com.afret.authentication.theme.ColorAmericanPurple
 import com.afret.authentication.theme.IbarraNovaNormalGray14
 import com.afret.authentication.theme.IbarraNovaSemiBoldPlatinum16
 import com.afret.authentication.util.TextFieldType
+import com.afret.authentication.validation.state.ValidationState
 
 
 @Composable
 fun AuthenticationTextField(
     modifier: Modifier,
-    text: String,
+    state: ValidationState,
     @StringRes hint: Int,
     onValueChange: (String) -> Unit,
     type: TextFieldType
@@ -22,7 +23,7 @@ fun AuthenticationTextField(
 
     CustomTextField(
         modifier = modifier,
-        text = text,
+        state = state,
         hint = hint,
         onValueChange = onValueChange,
         textStyle = IbarraNovaSemiBoldPlatinum16,

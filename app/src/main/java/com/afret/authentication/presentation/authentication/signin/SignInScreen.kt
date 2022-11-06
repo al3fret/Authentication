@@ -1,16 +1,19 @@
 package com.afret.authentication.presentation.authentication.signin
 
 
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.afret.authentication.R
 import com.afret.authentication.route.AppScreen
@@ -18,20 +21,38 @@ import com.afret.authentication.route.AppScreen
 
 import com.afret.authentication.theme.*
 import com.afret.authentication.util.TextFieldType
+import com.afret.authentication.validation.event.ValidationEvent
+import com.afret.authentication.validation.event.ValidationResultEvent
 import com.afret.authentication.widget.button.AuthenticationButton
 import com.afret.authentication.widget.textfield.AuthenticationTextField
+import kotlinx.coroutines.flow.collect
 
 @Composable
 fun SignInScreen(navController: NavController) {
 
 
-    var email by remember {
-        mutableStateOf("")
+    val viewModel: SignInViewModel = hiltViewModel()
+    val context = LocalContext.current
+
+
+
+
+    LaunchedEffect(key1 = context) {
+
+
+        viewModel.validationEvent.collect { event ->
+
+            when (event) {
+
+                is ValidationResultEvent.Success -> {
+
+                    Toast.makeText(context, R.string.validation_successfully, Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+        }
     }
 
-    var password by remember {
-        mutableStateOf("")
-    }
 
     Column(
 
@@ -72,9 +93,16 @@ fun SignInScreen(navController: NavController) {
         //Email Text Field
         AuthenticationTextField(
             modifier = Modifier.fillMaxWidth(0.85f),
-            text = email, hint = R.string.email,
+            state = viewModel.forms[SignInTextFieldId.EMAIL]!!, hint = R.string.email,
             onValueChange = {
-                email = it
+
+
+                viewModel.onEvent(
+                    ValidationEvent.TextFieldValueChange(
+
+                        viewModel.forms[SignInTextFieldId.EMAIL]!!.copy(text = it)
+                    )
+                )
             }, type = TextFieldType.Email
         )
 
@@ -83,9 +111,15 @@ fun SignInScreen(navController: NavController) {
         //Password Text Field
         AuthenticationTextField(
             modifier = Modifier.fillMaxWidth(0.85f),
-            text = password, hint = R.string.password,
+            state = viewModel.forms[SignInTextFieldId.PASSWORD]!!, hint = R.string.password,
             onValueChange = {
-                password = it
+
+                viewModel.onEvent(
+                    ValidationEvent.TextFieldValueChange(
+
+                        viewModel.forms[SignInTextFieldId.PASSWORD]!!.copy(text = it)
+                    )
+                )
             }, type = TextFieldType.Password
         )
 
@@ -99,8 +133,7 @@ fun SignInScreen(navController: NavController) {
             textId = R.string.login,
             onClick = {
 
-                println("email: $email")
-                println("password: $password")
+                viewModel.onEvent(ValidationEvent.Submit)
             }
         )
         Spacer(modifier = Modifier.height(15.dp))
@@ -116,16 +149,20 @@ fun SignInScreen(navController: NavController) {
         Row(modifier = Modifier.clickable {
 
             navController.navigate(AppScreen.SignUpScreen.route)
-        }){
+        }) {
 
             //Don't have an account Text
-            Text(text = stringResource(id = R.string.do_not_have_an_account),
-                style = IbarraNovaSemiBoldColorVerdigris17 )
+            Text(
+                text = stringResource(id = R.string.do_not_have_an_account),
+                style = IbarraNovaSemiBoldColorVerdigris17
+            )
 
             Spacer(modifier = Modifier.width(10.dp))
             //Sign Up Text
-            Text(text = stringResource(id = R.string.sign_up),
-                style = IbarraNovaSemiBoldPlatinum17 )
+            Text(
+                text = stringResource(id = R.string.sign_up),
+                style = IbarraNovaSemiBoldPlatinum17
+            )
 
         }
 
@@ -138,7 +175,7 @@ fun SignInScreen(navController: NavController) {
 @Composable
 @Preview
 fun SignInPreview() {
- //   SignInScreen()
+    //   SignInScreen()
 }
 
 

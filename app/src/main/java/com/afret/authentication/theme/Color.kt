@@ -17,3 +17,5 @@ val ColorVerdigris = Color(0xFF80FFF7)
 val ColorGraniteGray = Color(0xFF8E8E8E)
 val ColorPlatinum = Color(0xFFE1E6E3)
 val ColorAmericanPurple = Color(0xFF565565)
+val ColorRed = Color(0xFFF51506)
+

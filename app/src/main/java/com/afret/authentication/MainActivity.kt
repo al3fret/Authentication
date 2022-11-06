@@ -16,8 +16,11 @@ import com.afret.authentication.presentation.authentication.signup.SignUpScreen
 import com.afret.authentication.route.AppNavigationGraph
 import com.afret.authentication.theme.AuthenticationTheme
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import dagger.hilt.android.AndroidEntryPoint
 
-@OptIn(ExperimentalAnimationApi::class)
+
+@ExperimentalAnimationApi
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

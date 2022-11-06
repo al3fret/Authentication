@@ -75,7 +75,12 @@ val IbarraNovaSemiBoldColorVerdigris17 = TextStyle(
     fontSize = 17.sp,
     color = ColorVerdigris
 )
-
+val IbarraNovaNormalError13 = TextStyle(
+    fontFamily = IbarraNovaFont,
+    fontWeight = FontWeight.Normal,
+    fontSize = 13.sp,
+    color = ColorRed
+)
 
 // Set of Material typography styles to start with
 val Typography = Typography(
