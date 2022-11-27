@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930151230716",
+    "project_id": "jetpack-compose-firebase",
+    "storage_bucket": "jetpack-compose-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930151230716:android:6906a17f4cbbd9e14e3b79",
+        "android_client_info": {
+          "package_name": "com.afret.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930151230716-63hb5vffhfpi9d9ujf8pgovotsnnkv2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmj5ynG-qmMppXx4Ts6_ocfFxHaMhMgTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930151230716-63hb5vffhfpi9d9ujf8pgovotsnnkv2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

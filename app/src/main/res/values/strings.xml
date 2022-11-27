@@ -26,5 +26,25 @@
     <string name="must_be_from_9_to_12_digits">Must be from 9 to 12 digits</string>
     <string name="validation_successfully">Validation Successfully</string>
 
+    <!-- Profile -->
+    <string name="bio">Bio</string>
+    <string name="edit">Edit</string>
+    <string name="profile">Profile</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="user_information_updated_successfully">User information updated successfully</string>
+    <string name="user_image_updated_successfully">User Image Updated Successfully</string>
+
+    <!-- Logout Dialog -->
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to logout?</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+
+
+    <!-- Camera -->
+    <string name="select_photo">Select Photo</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+
+
 
 </resources>
