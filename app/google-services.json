@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979944233641",
+    "project_id": "authentication-firebase-66058",
+    "storage_bucket": "authentication-firebase-66058.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979944233641:android:b2b49f053b91d013ab27b8",
+        "android_client_info": {
+          "package_name": "com.afret.authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979944233641-2c83u6un5leeii72uuca61i75aqcojd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwUy7976GzdYy7P2efPx89aAGOHkMNtOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979944233641-2c83u6un5leeii72uuca61i75aqcojd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
