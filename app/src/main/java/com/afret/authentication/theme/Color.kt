@@ -13,6 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 
 //Custom Color
 val ColorGunmetal = Color(0xFF2C2B3F)
+val ColorGunmetal50 = Color(0x802C2B3F)
 val ColorVerdigris = Color(0xFF80FFF7)
 val ColorGraniteGray = Color(0xFF8E8E8E)
 val ColorPlatinum = Color(0xFFE1E6E3)
