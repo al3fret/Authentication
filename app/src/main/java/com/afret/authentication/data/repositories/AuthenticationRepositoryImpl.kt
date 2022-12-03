@@ -59,4 +59,32 @@ class AuthenticationRepositoryImpl @Inject constructor(
         }
 
     }
+
+    override suspend fun firebaseSignIn(email: String, password: String): Flow<Response<Boolean>> =
+        flow {
+
+            var signInSuccessfully = false
+
+            emit(Response.Loading)
+
+            try {
+
+                firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+                    signInSuccessfully =true
+                }.await()
+
+                if(signInSuccessfully){
+
+                    emit(Response.Success(true))
+
+                }else{
+                    emit(Response.Error("Failed To Sign In"))
+                }
+
+            } catch (e: Exception) {
+
+                emit(Response.Error(e.localizedMessage ?: "An Unexpected Error"))
+            }
+
+        }
 }

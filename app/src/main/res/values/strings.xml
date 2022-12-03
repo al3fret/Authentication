@@ -26,6 +26,7 @@
     <string name="must_be_from_9_to_12_digits">Must be from 9 to 12 digits</string>
     <string name="validation_successfully">Validation Successfully</string>
     <string name="sign_up_successfully">Sign Up Successfully</string>
+    <string name="sign_in_successfully">Sign In Successfully</string>
 
 
 </resources>

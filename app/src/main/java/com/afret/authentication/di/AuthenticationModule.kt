@@ -3,6 +3,7 @@ package com.afret.authentication.di
 import com.afret.authentication.data.repositories.AuthenticationRepositoryImpl
 import com.afret.authentication.domin.repositories.AuthenticationRepository
 import com.afret.authentication.domin.use_cases.authentication.AuthenticationUseCases
+import com.afret.authentication.domin.use_cases.authentication.FirebaseSignIn
 import com.afret.authentication.domin.use_cases.authentication.FirebaseSignUp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,7 +24,7 @@ object AuthenticationModule {
     fun provideAuthenticationRepository(
         firebaseAuth: FirebaseAuth,
         firebaseFirestore: FirebaseFirestore
-    ): AuthenticationRepository     {
+    ): AuthenticationRepository {
 
         return AuthenticationRepositoryImpl(
             firebaseAuth = firebaseAuth,
@@ -36,5 +37,8 @@ object AuthenticationModule {
     @Provides
     fun provideAuthenticationUseCases(
         repository: AuthenticationRepository
-    ) = AuthenticationUseCases(firebaseSignUp = FirebaseSignUp(repository = repository))
+    ) = AuthenticationUseCases(
+        firebaseSignUp = FirebaseSignUp(repository = repository),
+        firebaseSignIn = FirebaseSignIn(repository = repository)
+    )
 }

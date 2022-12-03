@@ -11,4 +11,10 @@ interface AuthenticationRepository {
         email: String,
         password: String,
     ): Flow<Response<Boolean>>
+
+
+    suspend fun firebaseSignIn(
+        email: String,
+        password: String
+    ): Flow<Response<Boolean>>
 }
